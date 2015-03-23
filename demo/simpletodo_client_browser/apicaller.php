@@ -32,9 +32,12 @@ class ApiCaller
 		//initialize and setup the curl handler
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this->_api_url);
+
+//		curl_setopt($ch, CURLOPT_POST, count($params));
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);		
 
 		//execute the request
 		$result = curl_exec($ch);
@@ -49,7 +52,7 @@ class ApiCaller
 		
 		//if there was an error in the request, throw an exception
 		if( $result->success == false ) {
-			throw new Exception($result->errormsg);
+			throw new Exception($result['errormsg']);
 		}
 		
 		//if everything went great, return the data

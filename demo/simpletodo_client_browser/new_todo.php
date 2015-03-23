@@ -2,7 +2,7 @@
 session_start();
 include_once 'apicaller.php';
 
-$apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://localhost/simpletodo_api/');
+$apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://192.168.73.190/simpletodo_api/');
 
 $new_item = $apicaller->sendRequest(array(
 	'controller' => 'todo',
@@ -13,7 +13,6 @@ $new_item = $apicaller->sendRequest(array(
 	'username' => $_SESSION['username'],
 	'userpass' => $_SESSION['userpass']
 ));
-
 header('Location: todo.php');
 exit();
 ?>

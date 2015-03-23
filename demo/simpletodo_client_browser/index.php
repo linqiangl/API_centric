@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 	
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
 	
 	<style>
 	body {
@@ -45,4 +45,4 @@
 		</form>
 	</div>
 </body>
-</html>
+</html> 
